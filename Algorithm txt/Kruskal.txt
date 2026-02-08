@@ -1,0 +1,22 @@
+Algo_Kruskal(G(V,E,W))
+{
+    // G → Graph with non-empty set of vertices (V) and set of edges (E)
+	// W → Weight matrix
+    Sort E in non-decreasing order(using heap sort) according to the edge weights W
+
+	n <-- |V|
+	T <-- ∅
+	Initialize n sets each containing a single element from V
+	repeat
+	{
+		e = {u,v} minimum
+		u_comp = find(u)
+		v_comp = find(v)
+		if (u_comp ≠ v_comp)
+		{
+			merge u_comp and v_comp
+			T <-- T ∪ {e}
+		}
+	} until |T| = n-1
+	return T
+}

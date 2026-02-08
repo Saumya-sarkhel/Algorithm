@@ -1,0 +1,23 @@
+Algo_Dijkstra(W,a,z)
+{
+    // a --> Starting vertex
+	// z --> Ending vertex
+	for (i = 1 to n)
+	{
+		L(Vi) = ∞
+	}
+	S <-- ∅ [Empty set]
+	L(a) = 0
+	while (z ∉ S)
+	{
+		u = a vertex that is not in S with L(v) minimum
+		S <-- S ∪ {u}
+		for all v that is not in S
+		{
+			if (L(u) + W(u,v) < L(v))
+			{
+				L(v) = L(u) + W(u,v)
+			}
+		}
+	}
+}

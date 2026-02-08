@@ -1,0 +1,15 @@
+Algo_Prim(G(V,E,W))
+{
+    // G → Graph with non-empty set of vertices (V) and set of edges (E)
+	// W → Weight matrix
+	n <-- |V|
+	T <-- ∅
+	B <-- An arbitrary member of V
+	while (|B| ≠ |V|)
+	{
+		e <-- {u,v}         //minimum weighted edge such that u ∈ B, v ∈ V/B
+		B <-- B ∪ {V}
+		T <-- T ∪ {e}
+	}
+	return T
+}

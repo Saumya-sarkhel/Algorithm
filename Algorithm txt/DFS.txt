@@ -1,0 +1,51 @@
+Algo_DFS(G(V,E),S)
+{
+        // S -→ Source vertex
+        // G -→ Graph with non-empty set of vertices (V) and set of edges (E)
+        n <-- |V|
+        for (i = 1 to n)
+        {
+            d[i] = -1
+            par[i] = -1
+        }
+        Count = 0
+        d[S] = 0
+        Par[s] = -1
+        top = 0
+        STACK <-- Empty stack
+        top = top+1
+        STACK[top] = S
+        while (top ≠ 0)
+        {
+            u = STACK[top]
+            top = top-1
+            for all V ∈ Γ(u)
+            {
+                if (d[V] < 0)
+                {
+                    d[V] = d[u]+1
+                    Par[V] = u
+                    top = top+1
+                    STACK[top] = V
+                }
+            }
+        }
+        if (n=Count)
+            print “Graph is Connected”
+
+        else
+            print “Graph is not Connected”
+
+        //for shortest path
+        for (i = n to 1)
+        {
+            k = i
+            print k
+            while (Par[k] ≠ -1)
+            {
+                k = par[i]
+                print k
+            }
+            // print new line
+        }
+} [end]

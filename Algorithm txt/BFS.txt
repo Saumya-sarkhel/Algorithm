@@ -1,0 +1,44 @@
+Algo_BFS( G(V,E), S )
+{
+        // S --> source vertex
+        // Non-empty vertex set of edges ∈ and starting point S and set of edges (E)
+        n <-- |V|
+        for(i=1 to n)
+        {
+            D[i] = -1
+            Par[i] = -1
+        }
+        While(front ≠ rear)
+        {
+                Front = front + 1;
+                u = Q[front]
+                count = count + 1
+                for all V ∈ ┌ (u)
+                {
+                    If(d[v] < 0)
+                    {
+                        d[v] = d[u] + 1
+                        par[v] = u
+                        rear = rear + 1
+                        Q[rear] = v
+                    } [ end of if]
+                } [ end of for]
+        } [end of while]
+
+        If (n = count)
+            Print “The graph is connected
+        else
+            Print “ The graph is not connected”
+
+        For(i=n to 1)
+        {
+            k = i
+            print “k”
+            while (par[k] ≠ -1)
+            {
+                k = par[k]
+                print k
+            }
+            Print “new line”
+        } [end of for]
+} [end]
